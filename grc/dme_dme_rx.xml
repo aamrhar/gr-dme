@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<block>
+  <name>DME RX</name>
+  <key>dme_dme_rx</key>
+  <category>[dme]</category>
+  <import>import dme</import>
+  <make>dme.dme_rx($samp_rate, $freq_vor, $id_num)</make>
+  <callback>set_mode($freq_vor)</callback>
+
+  <param>
+    <name>DME sample rate (Hz)</name>
+    <key>samp_rate</key>
+    <type>float</type>
+  </param>
+
+    <param>
+      <name>VOR freq MHz</name>
+      <key>freq_vor</key>
+      <type>float</type>
+    </param>
+
+    <param>
+      <name>DME id</name>
+      <key>id_num</key>
+      <type>int</type>
+    </param>
+
+    <sink>
+        <name>in</name>
+        <type>float</type>
+     </sink>
+
+    <sink>
+        <name>fpga_time</name>
+        <type>int</type>
+        <vlen>2</vlen>
+      </sink>
+
+    <sink>
+        <name>cmd_in</name>
+        <type>message</type>
+    </sink>
+
+    <sink>
+        <name>tx_detector</name>
+        <type>message</type>
+    </sink>
+
+    <source>
+        <name>z_cross</name>
+        <type>float</type>
+      </source>
+
+      <source>
+        <name>to_tx</name>
+        <type>message</type>
+      </source>
+
+      <source>
+        <name>dist</name>
+        <type>message</type>
+        <optional>1</optional>
+      </source>
+
+</block>

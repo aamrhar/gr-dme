@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<block>
+  <name>DME TX</name>
+  <key>dme_dme_tx</key>
+  <category>[dme]</category>
+  <import>import dme</import>
+  <make>dme.dme_tx($samp_rate, $vor_freq,$id_num)</make>
+
+  <callback>Set_Mode($vor_freq)</callback>
+
+  <param>
+    <name>sample rate</name>
+    <key>samp_rate</key>
+    <type>float</type>
+  </param>
+
+  <param>
+    <name>VOR frequency (MHz)</name>
+    <key>vor_freq</key>
+    <type>float</type>
+  </param>
+
+<param>
+  <name>dme id numer</name>
+  <key>id_num</key>
+  <type>int</type>
+</param>
+
+  <sink>
+    <name>from_rx</name>
+    <type>message</type>
+  </sink>
+
+  <source>
+    <name>cmd_out</name>
+    <type>message</type>
+  </source>
+
+    <source>
+      <name>out</name>
+      <type>float</type>
+    </source>
+</block>

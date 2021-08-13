@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<block>
+  <name>fpga_clk32_sim</name>
+  <key>dme_fpga_clk32_sim</key>
+  <category>[dme]</category>
+  <import>import dme</import>
+  <make>dme.fpga_clk32_sim($inc)</make>
+  <param>
+    <name>increment</name>
+    <key>inc</key>
+    <type>int</type>
+  </param>
+
+
+  <sink>
+    <name>dme1_tx</name>
+    <type>float</type>
+  </sink>
+
+    <sink>
+      <name>dme2_tx</name>
+      <type>float</type>
+    </sink>
+
+  <source>
+    <name>out</name>
+    <type>int</type>
+  </source>
+</block>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<block>
+  <name>dme_time</name>
+  <key>dme_dme_time</key>
+  <category>[dme]</category>
+  <import>import dme</import>
+  <make>dme.dme_time()</make>
+  <sink>
+      <name>in</name>
+      <type>int</type>
+    </sink>
+
+    <!-- Make one 'source' node per output. Sub-nodes:
+         * name (an identifier for the GUI)
+         * type
+         * vlen
+         * optional (set to 1 for optional inputs) -->
+    <source>
+      <name>out</name>
+      <type>int</type>
+      <vlen>2</vlen>
+    </source>
+
+    <source>
+      <name>dme1</name>
+      <type>message</type>
+    </source>
+
+    <source>
+      <name>dme2</name>
+      <type>message</type>
+    </source>
+</block>
